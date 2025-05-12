@@ -51,7 +51,13 @@ func main() {
 	// Wrap the router with CORS middleware
 	handler := c.Handler(r)
 
+	// Get port from environment variable or use 8080 as fallback
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+
 	// Start the server
-	log.Println("Server starting on :8080")
-	log.Fatal(http.ListenAndServe(":8080", handler))
+	log.Printf("Server starting on :%s", port)
+	log.Fatal(http.ListenAndServe(":"+port, handler))
 }
