@@ -22,10 +22,12 @@ func healthCheck(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		log.Fatal("Error loading .env file")
-		os.Exit(1)
+	// Load .env file only in development
+	if os.Getenv("ENV") != "production" {
+		err := godotenv.Load()
+		if err != nil {
+			log.Printf("Warning: Error loading .env file: %v", err)
+		}
 	}
 
 	// Create a new router
