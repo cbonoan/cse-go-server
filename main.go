@@ -40,7 +40,7 @@ func main() {
 	r.HandleFunc("/api/reservation", ReservationHandler).Methods("POST")
 
 	// Setup CORS
-	reactUrl := os.Getenv("REACT_URL")
+	reactUrl := os.Getenv("REACT_APP_DOMAIN")
 	c := cors.New(cors.Options{
 		AllowedOrigins:   []string{reactUrl}, // React app's URL
 		AllowedMethods:   []string{"GET", "POST", "OPTIONS"},
