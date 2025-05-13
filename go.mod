@@ -9,6 +9,7 @@ require (
 	github.com/joho/godotenv v1.5.1
 	github.com/mailgun/mailgun-go/v4 v4.23.0
 	github.com/rs/cors v1.10.1
+	golang.org/x/time v0.11.0
 )
 
 require (
@@ -17,5 +18,4 @@ require (
 	github.com/mailgun/errors v0.4.0 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180228061459-e0a39a4cb421 // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
-	golang.org/x/time v0.11.0 // indirect
 )
